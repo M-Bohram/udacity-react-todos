@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Todos from "./components/Todos";
+import TodoForm from "./components/TodoForm";
+
+class App extends Component {
+  state = {
+    id: 0,
+    todos: [],
+  };
+
+  onAddTodo = (todoTitle) => {
+    this.setState({
+      todos: [...this.state.todos, { id: this.state.id, title: todoTitle }],
+      id: this.state.id + 1,
+    }); 
+  };
+
+  render() {
+    return (
+      <div>
+        <Todos todos={this.state.todos} />
+        <TodoForm onAddTodo={this.onAddTodo} />
+      </div>
+    );
+  }
 }
 
 export default App;
