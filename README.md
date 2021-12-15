@@ -6,6 +6,10 @@ This project was used for React Cross-Skilling Course in Udacity.
 
 In the project directory, you can run:
 
+### `npm install`
+
+Installs the dependencies (creates the node_modules directory).
+
 ### `npm start`
 
 Runs the app in the development mode.\
