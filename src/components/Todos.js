@@ -1,18 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
+const Todos = ({ todos }) => {
 
-function Todos({ todos }) {
-
-    return (
-        <ul>
-           { todos.map(todo => <li key={todo.id}>{todo.title}</li>) }
-        </ul>
-    )
-}
-
-Todos.propTypes = {
-    todos: PropTypes.array.isRequired
+  return (
+    <ul>
+        {todos.map(todo => <li key={todo.id}>{todo.title}</li>)}
+    </ul>
+  )
 }
 
 export default Todos
